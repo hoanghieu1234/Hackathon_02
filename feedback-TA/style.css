@@ -1,0 +1,152 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.heading {
+    background-color: black;
+    color: palevioletred;
+    padding: 15px 10px;
+    text-align: center;
+}
+body {
+    background-color: #272d40;
+}
+.block-1 {
+    background-color: aliceblue;
+    position: relative;
+    top: 20px;
+    width: 1020px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 15px;
+    margin: auto;
+    text-align: center;
+}
+h2 {
+    margin: 20px;
+}
+.item {
+    display: flex;
+    justify-content: space-evenly;
+}
+.item input:active {
+    background-color: rgb(222, 42, 48);
+    color: aliceblue;
+}
+.item input {
+    position: relative;
+    margin: 80px 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: grey;
+    padding: 8px ;
+    border: none;
+    cursor: pointer;
+}
+.input-search #search {
+    width: 800px;
+    height: 70px;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+.input-search #send:hover{
+    background-color: rgb(222, 42, 48);
+    color: aliceblue;
+}
+.input-search #send {
+    position: absolute;
+    right: 128px;
+    top: 300px;
+    width: 90px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: gray;
+    border: none;
+    cursor: pointer;
+}
+
+.content  {
+    display: flex;
+    color: white;
+    margin-top: 40px;
+    justify-content: space-between;
+    padding: 20px 310px;
+    font-weight: bolder;
+}
+.box-1 {
+    position: relative;
+    width:1020px;   
+    margin: 20px auto;
+    height: 80px;
+    border-radius:10px;
+    background-color: aliceblue;
+}
+.box-1 input {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(230, 12, 12);
+    color: aliceblue;
+    padding: 8px ;
+    border: none;
+    cursor: pointer;
+    top: -10px;
+    left: -10px;
+}
+.box-1 .icon-1 i:hover {
+    background-color: rgb(230, 12, 12);
+    color: aliceblue;
+}
+.box-1 .icon-1 {
+    cursor: pointer;
+    float: right;
+    top: 2px;
+    margin: 10px 10px;
+    font-size: 19px;
+}
+.box-1 p {
+    float: left;
+    font-style: 20px;
+    font-size: 18px;
+    margin: 30px;
+}
+
+.box-2 {
+    position: relative;
+    width:1020px;   
+    margin: 20px auto;
+    height: 80px;
+    border-radius:10px;
+    background-color: aliceblue;
+}
+.box-2 input {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(230, 12, 12);
+    color: aliceblue;
+    padding: 8px ;
+    border: none;
+    cursor: pointer;
+    top: -10px;
+    left: -10px;
+}
+.box-2 .icon-2 {
+    cursor: pointer;
+    float: right;
+    top: 2px;
+    margin: 10px 10px;
+    font-size: 19px;
+}
+.box-2 p {
+    float: left;
+    font-style: 20px;
+    font-size: 18px;
+    margin: 30px;
+}
+
+    

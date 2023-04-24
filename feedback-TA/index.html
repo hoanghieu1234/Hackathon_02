@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Advance</title>
+</head>
+<body>
+    <div class="heading">
+        <h2>Feedback TA</h2>
+    </div>
+    <div class="block-1">
+        <h2><b>Thầy Phú dạy anh em có hay không ????</b></h2>
+        <div class="item">
+            <input type="button" value="1" id="value" onclick="handleClick(this)">
+            <input type="button" value="2" onclick="handleClick(this)">
+            <input type="button" value="3" onclick="handleClick(this)">
+            <input type="button" value="4" onclick="handleClick(this)">
+            <input type="button" value="5" onclick="handleClick(this)">
+            <input type="button" value="6" onclick="handleClick(this)">
+            <input type="button" value="7" onclick="handleClick(this)">
+            <input type="button" value="8" onclick="handleClick(this)">
+            <input type="button" value="9" onclick="handleClick(this)">
+            <input type="button" value="10" onclick="handleClick(this)">
+        </div>
+        <div class="input-search">
+            <input type="text" placeholder="write a review" id="search">
+            <input type="submit" value="Send" id="send" onclick="handleSend()">
+        </div>
+    </div>
+    <div class="content">
+        <p>2 Reviews</p>
+        <p>Average Rating: 9</p>
+    </div>
+ <div class="box-all">
+    <div class="box-1 ">
+        <input type="button" value="8">
+        <p>This is Feedback item 2</p>
+        <div class="icon-1">
+            <i class='bx bxs-edit'></i>
+            <i class='bx bx-message-alt-x'></i>
+        </div>
+    </div>
+    <div class="box-2 ">
+        <input type="button" value="10">
+        <p>This is Feedback item 1</p>
+        <div class="icon-2">
+            <i class='bx bxs-edit'></i>
+            <i class='bx bx-message-alt-x'></i>
+        </div>
+    </div>
+ </div>
+</body>
+<script src="./main.js"></script>
+<script src="./db.js"></script>
+</html>
