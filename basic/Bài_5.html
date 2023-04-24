@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài-5</title>
+    <style>
+         table,
+        th,
+        tr,
+        td {
+          border-collapse: collapse;
+          border: 2px solid black;
+        }
+        form {
+            display: none;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          margin-bottom: 20px;
+          width: 500px;
+        }
+        input {
+          padding: 10px;
+        }
+        .all-form {
+          display: flex;
+          gap: 30px;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Trang quản lý Nhân Viên</h1>
+    </header>
+    <div class="all-form">
+        <form action ="" id="add-form">
+            <h3>Create Employee</h3>
+            <input type="text" placeholder="Nhập id nhân viên" id="id-employ">
+            <input type="text" placeholder="Nhập tên nhân viên" id="name-employ">
+            <input type="button" onclick="handleAdd()" id="add" value=" Create Employee">
+        </form>
+        <form action="" id="edit-form">
+            <h3>Edit Employee</h3>
+            <input type="text" placeholder="Tạo id nhân viên" id="id-edit-employ" disabled>
+            <input type="text" placeholder="Nhập tên nhân viên" id="name-edit-employ">
+            <input type="submit" value="Sửa nhân viên">
+        </form>
+    </div>
+    <table cellpadding = "20">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Tên Nhân Viên</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody id="body">
+            <tr>
+                <td>1</td>
+                <td>Hoàng Hiếu</td>
+                <td><button onclick="handleUpdate()">Edit</button> <button>Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    const employees = [
+        {
+            id:1,
+            name:"Nguyễn Văn A",
+        },
+        
+        {
+            id:2,
+            name:"Nguyễn Văn B",
+        },
+        
+        {
+            id:3,
+            name:"Nguyễn Văn C",
+        }
+    ];
+    
+    function renderData(data) {
+    const table = document.querySelector("table");
+    const tbody = table.querySelector("tbody");
+
+    let contentTbody = "";
+
+    data.forEach((employ,index) => {
+        contentTbody += `<tr>
+            <td>${index + 1}</td>
+            <td>${employ.name}</td>
+            <td>
+                <button onclick = "handleEdit('${employ.id}')">Edit</button>
+                <button onclick = "handleDelete('${employ.id}')">Delete</button>
+            </td>
+        </tr>`;
+    });
+    tbody.innerHTML = contentTbody;
+}
+renderData(employees);
+
+// Xoá Nhân viên
+function handleDelete(id) {
+    employees.forEach((employ,index) => {
+        if(employ.id == id) {
+            employees.splice(index,1);
+        }
+    });
+    renderData(employees);
+}
+
+function handleAdd() {
+            const idAdd = document.querySelector("#id-employ").value;
+            const nameAdd = document.querySelector("#name-employ").value;
+            const user = {
+                id: idAdd,
+                name: nameAdd,
+            };
+            let isDulicate = false;
+            employees.forEach((data) => {
+                if (data.id == idAdd) {
+                    isDulicate = true;
+                }
+
+            });
+            if (isDulicate) {
+                alert("ID trùng, vui lòng đặt id mới");
+                return;
+            }
+            employees.push(user);
+            renderData(employees);
+}
+function handleEdit(id) {
+            let userEdit = {};
+            employees.forEach((data) => {
+                if (data.id == id) {
+                    userEdit = data;
+                }
+            });
+            const idEdit = document.querySelector("#id-edit-employ");
+            const namaEdit = document.querySelector("#name-edit-employ");
+            idEdit.value = userEdit.id;
+            namaEdit.value = userEdit.name;
+
+}
+function handleUpdate() {
+            const idUpdate = document.querySelector("#id-edit-employ").value;
+            const nameUpdate = document.querySelector("#id-edit-employ").value;
+            const userUpdate = {
+                id: idUpdate,
+                name: nameUpdate,
+            };
+            employees.forEach((data, index) => {
+                if (data.id == userUpdate.id) {
+                    employees.splice(index, 1, userUpdate);
+                }
+            });
+    renderData(employees);
+}
+</script>
+</html>
